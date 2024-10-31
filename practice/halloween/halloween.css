@@ -1,0 +1,74 @@
+@keyframes color_flash{
+    0%{
+        background-color: orange;
+    }
+    50%{
+        background-color: black;
+    }
+    100%{
+        background-color: orange;
+    }
+}
+body {
+    background-color: black;
+    color: orange;
+    font-family: 'The Halloween', sans-serif;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+#pic {
+    width: 50%;
+    height: 600px;
+    margin: auto;
+    background-image: url(halloween.png);
+}
+
+#pic:hover {
+    background-image: url(pumpkin.jpg);
+    background-size: cover;
+    background-clip: border-box;
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(-100%);
+    }
+    50% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(75%);
+    }
+}
+
+#title {
+    animation: slide 20s infinite;
+
+}
+
+li {
+    text-decoration: none;
+    list-style: none;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: orange;
+    color: black;
+    margin: 0;
+    height: 50px;
+}
+
+#skeleton {
+    position: fixed;
+    width: 100px;
+    height: 100px;
+}

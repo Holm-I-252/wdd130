@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flags</title>
+    <style>
+        #flag {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            width: 300px;
+            height: 200px;
+            position: relative;
+            border: 1px solid black;
+        }
+        #blue {
+            background-color: blue;
+            grid-column: 1/2;
+            grid-row: 1/2;
+        }
+        #white {
+            background-color: white;
+            grid-column: 2/3;
+            grid-row: 1/2;
+        }
+        #red {
+            background-color: red;
+            grid-row: 2/3;
+            grid-column: 1/4;
+        }
+        /* HTML: <div class="star"></div> */
+.star {
+  max-width: 80%;  
+  aspect-ratio: 1;
+  background: white;
+  clip-path: polygon(50% 0,
+    calc(50%*(1 + sin(.4turn))) calc(50%*(1 - cos(.4turn))),
+    calc(50%*(1 - sin(.2turn))) calc(50%*(1 - cos(.2turn))),
+    calc(50%*(1 + sin(.2turn))) calc(50%*(1 - cos(.2turn))),
+    calc(50%*(1 - sin(.4turn))) calc(50%*(1 - cos(.4turn))) 
+   ); 
+   margin-left: 10px;
+   margin-top: 10px;
+  /* or more simple
+  clip-path: polygon(50% 0,79% 90%,2% 35%,98% 35%,21% 90%); 
+   */
+}
+
+#denmark, #finland {
+    display: grid;
+    grid-template-columns: 1fr 50px 2fr;
+    grid-template-rows: 1fr 50px 1fr;
+    border: 2px solid black;
+    width: 300px;
+    height: 200px;
+    margin-top: 30px;
+}
+
+.red {
+    background-color: red;
+}
+
+.white {
+    background-color: white;
+}
+
+.blue {
+    background-color: blue;
+}
+
+.green {
+    background-color: green;
+}
+
+#b_green {
+    grid-row: 1/3;
+}
+
+.yellow {
+    background-color: yellow;
+}
+
+#mid {
+    grid-column: 1/4;
+}
+
+#benin {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    border: 2px solid black;
+    width: 300px;
+    height: 200px;
+    margin-top: 30px;
+}
+
+
+#caf {
+    display: grid;
+    grid-template-columns: 1fr 40px 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    border: 2px solid black;
+    width: 300px;
+    height: 200px;
+    margin-top: 30px;
+}
+
+#caf_red {
+    grid-row: 1/5;
+    grid-column: 2;
+}
+
+.star_caf {
+  max-width: 30%;  
+  aspect-ratio: 1;
+  background: yellow;
+  clip-path: polygon(50% 0,
+    calc(50%*(1 + sin(.4turn))) calc(50%*(1 - cos(.4turn))),
+    calc(50%*(1 - sin(.2turn))) calc(50%*(1 - cos(.2turn))),
+    calc(50%*(1 + sin(.2turn))) calc(50%*(1 - cos(.2turn))),
+    calc(50%*(1 - sin(.4turn))) calc(50%*(1 - cos(.4turn))) 
+   ); 
+   margin-left: 30px;
+   margin-top: 5px;
+  /* or more simple
+  clip-path: polygon(50% 0,79% 90%,2% 35%,98% 35%,21% 90%); 
+   */
+}
+
+    </style>
+</head>
+<body>
+    <div id="flag">
+        <div id="blue">
+            <div class="star"></div>
+        </div>
+        <div id="white"></div>
+        <div id="red"></div>
+    </div>
+
+    <div id="denmark">
+        <div class="red"></div>
+        <div class="white"></div>
+        <div class="red"></div>
+        <div class="white" id="mid"></div>
+        <div class="red"></div>
+        <div class="white"></div>
+        <div class="red"></div>
+
+    </div>
+
+    <div id="finland">
+        <div class="white"></div>
+        <div class="blue"></div>
+        <div class="white"></div>
+        <div class="blue" id="mid"></div>
+        <div class="white"></div>
+        <div class="blue"></div>
+        <div class="white"></div>
+
+    </div>
+
+    <div id="benin">
+        <div class="green" id="b_green"></div>
+        <div class="yellow"></div>
+        <div class="red"></div>
+
+    </div>
+
+    <div id="caf">
+        <div class="blue">
+            <div class="star_caf"></div>
+        </div>
+        <div class="red" id="caf_red"></div>
+        <div class="blue"></div>
+        <div class="white"></div>
+        <div class="white"></div>
+        <div class="green"></div>
+        <div class="green"></div>
+        <div class="yellow"></div>
+        <div class="yellow"></div>
+    </div>
+</body>
+</html>
