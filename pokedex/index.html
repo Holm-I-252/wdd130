@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pokedex</title>
+    <link
+      href="https://fonts.cdnfonts.com/css/pokemon-solid"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/dex.css">
+
+    <style>
+      @import url("https://fonts.cdnfonts.com/css/pokemon-solid");
+    </style>
+  </head>
+  <!-- Add a page for types -->
+   <nav>
+     <div id="regions">
+       <a href="kanto.html">Kanto</a>
+       <a href="johto.html">Johto</a>
+       <a href="hoenn.html">Hoenn</a>
+       <a href="sinnoh.html">Sinnoh</a>
+      </div>
+      <a href="index.html" id="home_link">Pokedex</a>
+      <a href="types.html" id="type_link">Types</a>
+   </nav>
+    <h2 id="intro">Welcome to my pokedex site! I made this website for my wdd130 class at BYUI. Use this homepage for searching for a specific pokemon, or use the nav bar at the top to search by region. More regions and features are coming soon!</h2>
+    <input type="text" id="search" placeholder="Search Pokemon" />
+    <button id="search_btn">Search</button>
+    <div id="display">
+      <div id="display_pokemon">Search for a Pokemon!</div>
+      <div id="stats">
+        <h3 id="type"></h3>
+        <h3 id="hp"></h3>
+        <h3 id="attack"></h3>
+        <h3 id="defense"></h3>
+        <h3 id="special-attack"></h3>
+        <h3 id="special-defense"></h3>
+        <h3 id="speed"></h3>
+      </div>
+    </div>
+    
+
+
+    <script src="dex.js"></script>
+  </body>
+</html>
