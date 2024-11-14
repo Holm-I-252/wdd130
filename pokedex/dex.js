@@ -1,3 +1,5 @@
+// import Chart from "chart.js/auto";
+
 const pokemon = document.querySelectorAll("li");
 const displayPokemon = document.getElementById("display_pokemon");
 
@@ -101,6 +103,9 @@ pokemon.forEach((poke) => {
       .getElementById("show_abilities")
       .addEventListener("click", showAbilities);
 
+    canvas_holder = document.getElementById("canvas_holder");
+    canvas_holder.innerHTML = `<canvas id="statChart" width="100" height="100" context="2d"></canvas>`;
+
     console.log(url);
 
     fetch(url)
@@ -120,23 +125,66 @@ pokemon.forEach((poke) => {
           type.innerHTML = `<h3>Type: ${data.types[0].type.name}</h3>`;
         }
 
-        let hp = document.getElementById("hp");
-        hp.innerHTML = `<h3>HP: ${data.stats[0].base_stat}</h3>`;
+        // let hp = document.getElementById("hp");
+        // hp.innerHTML = `<h3>HP: ${data.stats[0].base_stat}</h3>`;
 
-        let attack = document.getElementById("attack");
-        attack.innerHTML = `<h3>Attack: ${data.stats[1].base_stat}</h3>`;
+        // let attack = document.getElementById("attack");
+        // attack.innerHTML = `<h3>Attack: ${data.stats[1].base_stat}</h3>`;
 
-        let defense = document.getElementById("defense");
-        defense.innerHTML = `<h3>Defense: ${data.stats[2].base_stat}</h3>`;
+        // let defense = document.getElementById("defense");
+        // defense.innerHTML = `<h3>Defense: ${data.stats[2].base_stat}</h3>`;
 
-        let specialAttack = document.getElementById("special-attack");
-        specialAttack.innerHTML = `<h3>Special Attack: ${data.stats[3].base_stat}</h3>`;
+        // let specialAttack = document.getElementById("special-attack");
+        // specialAttack.innerHTML = `<h3>Special Attack: ${data.stats[3].base_stat}</h3>`;
 
-        let specialDefense = document.getElementById("special-defense");
-        specialDefense.innerHTML = `<h3>Special Defense: ${data.stats[4].base_stat}</h3>`;
+        // let specialDefense = document.getElementById("special-defense");
+        // specialDefense.innerHTML = `<h3>Special Defense: ${data.stats[4].base_stat}</h3>`;
 
-        let speed = document.getElementById("speed");
-        speed.innerHTML = `<h3>Speed: ${data.stats[5].base_stat}</h3>`;
+        // let speed = document.getElementById("speed");
+        // speed.innerHTML = `<h3>Speed: ${data.stats[5].base_stat}</h3>`;
+
+
+        let ctx = document.getElementById('statChart').getContext('2d');
+
+        console.log(data.stats[0].base_stat,
+          data.stats[1].base_stat,
+          data.stats[2].base_stat,
+          data.stats[3].base_stat,
+          data.stats[4].base_stat,
+          data.stats[5].base_stat,)
+
+        let myRadarChart = new Chart(ctx, {
+          type: 'radar',
+          data: {
+            labels: ["HP", "Attack", "Defense", "Special Attack", "Special Defense", "Speed"],
+            datasets: [
+              {
+                label: "Stats",
+                data: [
+                  data.stats[0].base_stat,
+                  data.stats[1].base_stat,
+                  data.stats[2].base_stat,
+                  data.stats[3].base_stat,
+                  data.stats[4].base_stat,
+                  data.stats[5].base_stat,
+                ],
+                backgroundColor: ["rgba(255, 99, 132, 0.2)"],
+                borderColor: ["rgba(255, 99, 132, 1)"],
+                borderWidth: 1,
+              },
+              {
+                data: [0, 200]
+              }
+            ],
+  
+          },
+          responsive: true,
+      });
+      myRadarChart.canvas.style.height = '128px';
+      myRadarChart.canvas.style.width = '128px';
+       
+
+        
       })
       .catch((error) => {
         console.error("Error fetching data from the API: ", error);

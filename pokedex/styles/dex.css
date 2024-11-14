@@ -328,3 +328,8 @@ nav a:hover {
   
 
 }
+
+#canvas_holder {
+  width: 500px;
+  height: 500px;
+}
