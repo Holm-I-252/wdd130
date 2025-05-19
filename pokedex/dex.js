@@ -156,7 +156,7 @@ pokemon.forEach((poke) => {
         let myRadarChart = new Chart(ctx, {
           type: 'radar',
           data: {
-            labels: ["HP", "Attack", "Defense", "Special Attack", "Special Defense", "Speed"],
+            labels: ["HP", "Attack", "Defense", "Speed","Special Defense", "Special Attack"],
             datasets: [
               {
                 label: "Stats",
@@ -164,20 +164,38 @@ pokemon.forEach((poke) => {
                   data.stats[0].base_stat,
                   data.stats[1].base_stat,
                   data.stats[2].base_stat,
-                  data.stats[3].base_stat,
-                  data.stats[4].base_stat,
                   data.stats[5].base_stat,
+                  data.stats[4].base_stat,
+                  data.stats[3].base_stat,
                 ],
                 backgroundColor: ["rgba(255, 99, 132, 0.2)"],
                 borderColor: ["rgba(255, 99, 132, 1)"],
                 borderWidth: 1,
               },
               {
-                data: [0, 200]
+                data: [0, 140]
               }
             ],
   
           },
+          options: {
+            plugins: {
+                legend: {
+                    labels: {
+                        font: {
+                            family: 'Arial',
+                            size: 20,      
+                            style: 'normal',
+                            weight: 'bold',  
+                            lineHeight: 1.2, 
+                        },
+                    },
+                    pointLabels: {
+                      size: 20
+                    }
+                },
+            },
+        },
           responsive: true,
       });
       myRadarChart.canvas.style.height = '128px';
@@ -252,7 +270,7 @@ function showAbilities() {
         } else {
           document.getElementById(
             "ability_container"
-          ).innerHTML += `<p class="ability" id="hidden">${ability.ability.name}</p>`;
+          ).innerHTML += `<p class="ability" id="hidden">${ability.ability.name} (H)</p>`;
         }
       });
     })
